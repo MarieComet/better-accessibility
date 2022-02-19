@@ -1,0 +1,58 @@
+# Copyright (C) 2022 Marie Comet
+# This file is distributed under the same license as the Better Accessibility plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Better Accessibility 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/better-accessibility\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-02-19T13:12:31+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.3.0\n"
+"X-Domain: better-accessibility\n"
+
+#. Plugin Name of the plugin
+msgid "Better Accessibility"
+msgstr ""
+
+#. Description of the plugin
+msgid "Adds settings to improve accessibility and automatically corrects accessibility issues."
+msgstr ""
+
+#. Author of the plugin
+msgid "Marie Comet"
+msgstr ""
+
+#: admin/menus.php:21
+#: build/index.js:80
+#: build/index.js:90
+#: src/attributes/aria-label.js:60
+#: src/attributes/aria-label.js:68
+#: build/index.js:60
+#: build/index.js:68
+msgid "Aria label"
+msgstr ""
+
+#: admin/menus.php:77
+msgid "Aria label (optional)"
+msgstr ""
+
+#: admin/menus.php:79
+msgid "The aria label attribute is used to provide a more explicit link label than the Navigation Label to people using a screen reader. It is not visible on the screen."
+msgstr ""
+
+#: front/editor.php:27
+#: front/editor.php:36
+#: front/menus.php:54
+#: front/menus.php:56
+msgid " (new tab)"
+msgstr ""
+
+#: build/index.js:91
+#: src/attributes/aria-label.js:69
+#: build/index.js:69
+msgid "The aria label attribute is used to provide a more explicit link label than the button text, to people using a screen reader. It is not visible on the screen."
+msgstr ""
