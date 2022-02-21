@@ -21,7 +21,10 @@ const {
   __
 } = wp.i18n; // Enable icon control on the following blocks
 
-const enableAriaLabelOnBlocks = ['core/button'];
+const enableAriaLabelOnBlocks = {
+  'core/button': 'url',
+  'core/image': 'href'
+};
 const {
   createHigherOrderComponent
 } = wp.compose;
@@ -42,7 +45,7 @@ const {
 
 const setAriaLabel = (settings, name) => {
   // Do nothing if it's another block than our defined ones.
-  if (!enableAriaLabelOnBlocks.includes(name)) {
+  if (!enableAriaLabelOnBlocks.hasOwnProperty(name)) {
     return settings;
   }
 
@@ -60,19 +63,26 @@ wp.hooks.addFilter('blocks.registerBlockType', 'better-accessibility/arialabel',
 
 const withAriaLabel = createHigherOrderComponent(BlockEdit => {
   return props => {
-    if (!enableAriaLabelOnBlocks.includes(props.name)) {
+    if (!enableAriaLabelOnBlocks.hasOwnProperty(props.name)) {
       return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockEdit, props);
     }
 
+    const urlAttributeKey = enableAriaLabelOnBlocks[props.name];
+    const url = props.attributes[urlAttributeKey];
+
+    if (!url) {
+      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockEdit, props);
+    }
+
+    const {
+      arialabel
+    } = props.attributes;
     const [isVisible, setIsVisible] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
 
     const toggleVisible = () => {
       setIsVisible(state => !state);
     };
 
-    const {
-      arialabel
-    } = props.attributes;
     const isAriaLabelSet = !!arialabel;
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(BlockControls, {
       group: "block"
@@ -89,7 +99,7 @@ const withAriaLabel = createHigherOrderComponent(BlockEdit => {
       className: "block-editor-link-control block-editor-link-control__field block-editor-link-control__arialabel"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(TextControl, {
       label: __('Aria label', 'better-accessibility'),
-      help: __('The aria label attribute is used to provide a more explicit link label than the button text, to people using a screen reader. It is not visible on the screen.', 'better-accessibility'),
+      help: __('The aria label attribute is used to provide a more explicit link label than the default link text, to people using a screen reader. It is not visible on the screen.', 'better-accessibility'),
       value: arialabel,
       onChange: value => props.setAttributes({
         arialabel: value ? value : ''

@@ -4,9 +4,10 @@ const { addFilter } = wp.hooks;
 const { __ } = wp.i18n;
 
 // Enable icon control on the following blocks
-const enableAriaLabelOnBlocks = [
-    'core/button'
-];
+const enableAriaLabelOnBlocks = {
+    'core/button' : 'url',
+    'core/image' : 'href'
+};
 
 const { createHigherOrderComponent } = wp.compose;
 const { Fragment } = wp.element;
@@ -18,7 +19,7 @@ import { useState } from '@wordpress/element'
 /* Declare custom attributes */
 const setAriaLabel = ( settings, name ) => {
     // Do nothing if it's another block than our defined ones.
-    if ( ! enableAriaLabelOnBlocks.includes( name ) ) {
+    if ( ! enableAriaLabelOnBlocks.hasOwnProperty( name ) ) {
         return settings;
     }
 
@@ -38,18 +39,28 @@ wp.hooks.addFilter(
 const withAriaLabel = createHigherOrderComponent( ( BlockEdit ) => {
     return ( props ) => {
 
-    	if ( ! enableAriaLabelOnBlocks.includes( props.name ) ) {
+    	if ( ! enableAriaLabelOnBlocks.hasOwnProperty( props.name ) ) {
             return (
                 <BlockEdit { ...props } />
             );
         }
 
+        const urlAttributeKey = enableAriaLabelOnBlocks[ props.name ];        
+        const url = props.attributes[urlAttributeKey];
+
+        if ( ! url ) {
+            return (
+                <BlockEdit { ...props } />
+            );
+        }
+
+        const { arialabel } = props.attributes;
+
         const [ isVisible, setIsVisible ] = useState( false );
         const toggleVisible = () => {
             setIsVisible( ( state ) => ! state );
         };
-
-        const { arialabel } = props.attributes;
+        
         const isAriaLabelSet = !! arialabel;
 
         return (
@@ -67,7 +78,7 @@ const withAriaLabel = createHigherOrderComponent( ( BlockEdit ) => {
                             <div className="block-editor-link-control block-editor-link-control__field block-editor-link-control__arialabel">
                                 <TextControl
                                     label={ __( 'Aria label', 'better-accessibility' ) }
-                                    help={ __( 'The aria label attribute is used to provide a more explicit link label than the button text, to people using a screen reader. It is not visible on the screen.', 'better-accessibility' )}
+                                    help={ __( 'The aria label attribute is used to provide a more explicit link label than the default link text, to people using a screen reader. It is not visible on the screen.', 'better-accessibility' )}
                                     value={ arialabel }
                                     onChange={ ( value ) =>
                                         props.setAttributes( { arialabel: value ? value : '' } )

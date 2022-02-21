@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Blank WordPress Pot v1.0.0\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2022-02-19 13:27+0100\n"
+"POT-Creation-Date: 2022-02-21 17:59+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: Your Team <translations@example.com>\n"
@@ -18,15 +18,14 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;esc_html_e;esc_html_x:1,2c;esc_html__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
-"_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,"
-"_nc:4c,1,2\n"
+"_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Generator: Poedit 2.3\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 
-#: admin/menus.php:21 build/index.js:81 build/index.js:91
-#: src/attributes/aria-label.js:61 src/attributes/aria-label.js:69
+#: admin/menus.php:21 build/index.js:91 build/index.js:101
+#: src/attributes/aria-label.js:72 src/attributes/aria-label.js:80
 msgid "Aria label"
 msgstr "Aria label"
 
@@ -44,20 +43,24 @@ msgstr ""
 "explicite que le Titre de la navigation, aux personnes utilisant un lecteur "
 "d'écran. Il n'est pas visible à l'écran."
 
-#: build/index.js:92 src/attributes/aria-label.js:70
+#: build/index.js:102 src/attributes/aria-label.js:81
 msgid ""
 "The aria label attribute is used to provide a more explicit link label than "
-"the button text, to people using a screen reader. It is not visible on the "
-"screen."
+"the default link text, to people using a screen reader. It is not visible on "
+"the screen."
 msgstr ""
 "L'attribut aria label est utilisé pour fournir un libellé de lien plus "
-"explicite que le texte du bouton, aux personnes utilisant un lecteur "
-"d'écran. Il n'est pas visible à l'écran."
+"explicite que le texte du lien par défaut, aux personnes utilisant un "
+"lecteur d'écran. Il n'est pas visible à l'écran."
 
-#: front/editor.php:27 front/editor.php:36 front/menus.php:54
-#: front/menus.php:56
+#: front/editor.php:27 front/editor.php:37 front/editor.php:45
+#: front/editor.php:57 front/menus.php:54 front/menus.php:56
 msgid " (new tab)"
 msgstr " (nouvel onglet)"
+
+#: front/editor.php:36
+msgid "Open image"
+msgstr "Ouvrir l'image"
 
 #, fuzzy
 #~| msgid " (new tab)"
