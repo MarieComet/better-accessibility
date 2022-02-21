@@ -27,7 +27,8 @@ Will be turned into : `<a target="_blank" rel="noopener" href="https://twitter.c
 
 ![image](https://user-images.githubusercontent.com/7976501/154801883-8ed5efa0-0534-4b2f-9e5f-81a9d71885e3.png)
 
-
+#### Separator block
+- Automattically hide separator block for screen readers (adds aria-hidden="true" to `<hr>`)
 
 
 Available in French and English.
