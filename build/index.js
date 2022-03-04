@@ -94,7 +94,8 @@ const withAriaLabel = createHigherOrderComponent(BlockEdit => {
     }), isVisible && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Popover, {
       position: "bottom center",
       noArrow: true,
-      focusOnMount: false
+      focusOnMount: "firstElement",
+      onFocusOutside: toggleVisible
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
       className: "block-editor-link-control block-editor-link-control__field block-editor-link-control__arialabel"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(TextControl, {

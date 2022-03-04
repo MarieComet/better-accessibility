@@ -74,7 +74,7 @@ const withAriaLabel = createHigherOrderComponent( ( BlockEdit ) => {
                             isActive={ isAriaLabelSet }
                         />
                         { isVisible &&
-                        <Popover position="bottom center" noArrow focusOnMount={ false }>
+                        <Popover position="bottom center" noArrow focusOnMount='firstElement' onFocusOutside={ toggleVisible }>
                             <div className="block-editor-link-control block-editor-link-control__field block-editor-link-control__arialabel">
                                 <TextControl
                                     label={ __( 'Aria label', 'better-accessibility' ) }
