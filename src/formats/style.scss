@@ -1,0 +1,13 @@
+// Force screen readers texts set in format option to be visible in editor
+.editor-styles-wrapper .screen-reader-text.better-a11y-screen-reader-text {
+    clip-path: none;
+    clip: initial;
+    height: auto;
+    margin: 0;
+    overflow: initial;
+    position: relative;
+    width: auto;
+    word-wrap: initial !important;
+    opacity: .8;
+    border: 2px dotted;
+}

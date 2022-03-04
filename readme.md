@@ -21,6 +21,9 @@ Will be turned into : `<a target="_blank" rel="noopener" href="https://twitter.c
 
 ### Editor
 
+#### General
+- Register a new format type "Screen reader text" (Block Toolbar), which add a new format option to visually hide part of text (with .screen-reader-text class)
+
 #### Button block
 - Automatically adds an aria-label containing "_button text_ **(new tab)**" attribute to links that open in a new tab (target blank)
 - Adds an aria-label setting to Block Toolbar (which is automatically filled with "_button aria label_ **(new tab)**" if the link opens in a new tab)

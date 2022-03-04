@@ -1,0 +1,18 @@
+/*!***********************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/formats/style.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************/
+.editor-styles-wrapper .screen-reader-text.better-a11y-screen-reader-text {
+  -webkit-clip-path: none;
+          clip-path: none;
+  clip: initial;
+  height: auto;
+  margin: 0;
+  overflow: initial;
+  position: relative;
+  width: auto;
+  word-wrap: initial !important;
+  opacity: 0.8;
+  border: 2px dotted;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

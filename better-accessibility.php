@@ -36,3 +36,12 @@ function better_a11y_include_files() {
         require_once( BETTER_A11Y_PATH . 'front/editor.php' );
     }
 }
+
+function better_a11y_gutenberg_editor_scripts() {
+    wp_enqueue_style(
+        'better_a11y-gutenberg',
+        BETTER_A11Y_URL . 'build/style-index.css',
+        BETTER_A11Y_VERSION
+    );
+}
+add_action( 'enqueue_block_editor_assets', 'better_a11y_gutenberg_editor_scripts' );
