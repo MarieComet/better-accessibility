@@ -27,6 +27,10 @@ Will be turned into : `<a target="_blank" rel="noopener" href="https://twitter.c
 
 ![image](https://user-images.githubusercontent.com/7976501/154801883-8ed5efa0-0534-4b2f-9e5f-81a9d71885e3.png)
 
+#### Image Block (with link)
+- Automatically adds an aria-label containing "_image alt text_ **(new tab)**" attribute to image link that open in a new tab (target blank)
+- Adds an aria-label setting to Block Toolbar (which is automatically filled with "_image alt text_ **(new tab)**" if the link opens in a new tab)
+
 #### Separator block
 - Automattically hide separator block for screen readers (adds aria-hidden="true" to `<hr>`)
 

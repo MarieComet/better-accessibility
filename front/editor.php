@@ -53,7 +53,7 @@ function better_a11y_filter_blocks_render( $block_content, $block ) {
                     preg_match( '/<a[^>]*>(.*)<\/a>/', $block_content, $button_text );
                     $replace = sprintf(
                         '<a aria-label="%s%s"',
-                        $button_text[1],
+                        wp_strip_all_tags( $button_text[1] ),
                         __( ' (new tab)', 'better-accessibility' )
                     );
                     $block_content = str_replace( '<a', $replace, $block_content );
